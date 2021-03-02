@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "designation": "CEO",
+      "gender": "Female",
+      "city": "Chennai"
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "designation": "HR",
+      "gender": "Male",
+      "city": "Hyderabad"
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "designation": "Manager",
+      "gender": "Female",
+      "city": "Jeypore"
+    },
+    {
+      "id": 4,
+      "name": "Patricia Lebsack",
+      "designation": "CEO",
+      "gender": "Male",
+      "city": "Delhi"
+    },
+    {
+      "name": "Praneeth Palli",
+      "gender": "Male",
+      "designation": "developer",
+      "city": "Visakhapatnam",
+      "id": 5
+    },
+    {
+      "name": "Rebecca",
+      "gender": "Female",
+      "designation": "Analyst",
+      "city": "Huston",
+      "id": 6
+    }
+  ]
+}
