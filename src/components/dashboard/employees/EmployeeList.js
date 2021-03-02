@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import EditEmployee from "./EditEmployee";
+import "./EmployeeList.css";
 
 const EmployeeList = ({ allEmploy, setEmployChange }) => {
   //   console.log(allEmploy);
