@@ -6,13 +6,13 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Main from "./components/Main";
-import AddEmploy from "./components/Employee/AddEmploy";
 import EditEmploy from "./components/Employee/EditEmploy";
+import AddEmploy from "./components/Employee/AddEmploy";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -39,10 +39,20 @@ function App() {
       <Router>
         <div className="container">
           <Switch>
-            <Route exact path="/" render={Main} />
+            <Route
+              exact
+              path="/"
+              render={(props) =>
+                !isAuthenticated ? (
+                  <Main {...props} />
+                ) : (
+                  <Redirect to="/dashboard" />
+                )
+              }
+            />
             <Route exact path="/home" render={Home} />
             <Route exact path="/home/addEmploy" render={AddEmploy} />
-            <Route exact path="/home/edit/:id" render={EditEmploy} />
+            {/* <Route exact path="/home/edit/:id" render={EditEmploy} /> */}
             <Route
               exact
               path="/login"

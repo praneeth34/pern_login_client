@@ -1,33 +1,32 @@
-.login {
+.register {
   margin-top: 20px;
   border: 5px solid whitesmoke;
   display: flex;
   justify-content: space-between;
 }
 
-.login__left {
+.register__left {
   padding: 30px;
   background-color: lightcyan;
   width: 60%;
 }
 
-.login__left h1,
+.register__left h1,
 form,
 label,
 b {
   background-color: lightcyan;
 }
 
-.login__left > div {
+.register__left > div {
   background-color: lightcyan;
 }
-
 .funciton span,
 Link {
   background-color: lightcyan;
 }
 
-.login__right img {
+.register__right img {
   height: 500px;
   width: 100%;
   margin-right: 0;

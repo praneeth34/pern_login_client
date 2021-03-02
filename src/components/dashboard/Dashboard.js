@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Home from "./Home";
+import Home from "../Home";
+import EmployeeList from "./employees/EmployeeList";
 
 const Dashboard = ({ setAuth }) => {
-  const [name, setName] = useState("");
+  const [allEmploy, setAllEmploy] = useState([]);
+  const [employChange, setEmployChange] = useState(false);
 
   const getProfile = async () => {
     try {
@@ -12,7 +14,7 @@ const Dashboard = ({ setAuth }) => {
       });
 
       const parseData = await res.json();
-      setName(parseData.user_name);
+      setAllEmploy(parseData);
     } catch (err) {
       console.error(err.message);
     }
@@ -30,16 +32,19 @@ const Dashboard = ({ setAuth }) => {
 
   useEffect(() => {
     getProfile();
-  }, []);
+    setEmployChange(false);
+  }, [employChange]);
 
   return (
-    <div>
-      <h1 className="mt-5">Dashboard</h1>
-      <h2>Welcome {name}</h2>
-      <button onClick={(e) => logout(e)} className="btn btn-primary">
-        Logout
-      </button>
-      <Home />
+    <div className="dashboard">
+      <div className="d-flex">
+        <h2>Welcome</h2>
+        <button onClick={(e) => logout(e)} className="btn btn-primary">
+          Logout
+        </button>
+      </div>
+      <Home setEmployChange={setEmployChange} />
+      <EmployeeList allEmploy={allEmploy} setEmployChange={setEmployChange} />
     </div>
   );
 };

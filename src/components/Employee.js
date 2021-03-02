@@ -10,12 +10,12 @@ function Employee() {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:3003/users");
+    const result = await axios.get("http://localhost:5000/employees");
     setUser(result.data);
     // console.log(result);
   };
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:3003/users/${id}`);
+    await axios.delete(`http://localhost:5000/employees/${id}`);
     loadUsers();
   };
   return (

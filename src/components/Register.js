@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Register.css";
 
 const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
@@ -40,37 +41,57 @@ const Register = ({ setAuth }) => {
   };
 
   return (
-    <Fragment>
-      <h1 className="mt-5 text-center">Register</h1>
-      <form onSubmit={onSubmitForm}>
-        <input
-          type="text"
-          name="email"
-          value={email}
-          placeholder="email"
-          onChange={(e) => onChange(e)}
-          className="form-control my-3"
+    <div className="register">
+      <div className="register__left">
+        <Fragment>
+          <h1 className="mt-5 text-center">Register</h1>
+          <form onSubmit={onSubmitForm}>
+            <input
+              type="text"
+              name="email"
+              value={email}
+              placeholder="email"
+              onChange={(e) => onChange(e)}
+              required
+              className="form-control my-3"
+            />
+            <input
+              type="password"
+              name="password"
+              value={password}
+              placeholder="password"
+              onChange={(e) => onChange(e)}
+              required
+              className="form-control my-3"
+            />
+            <input
+              type="text"
+              name="name"
+              value={name}
+              placeholder="name"
+              onChange={(e) => onChange(e)}
+              required
+              className="form-control my-3"
+            />
+            <button className="btn btn-success btn-block">Submit</button>
+          </form>
+          <div className="funciton">
+            <span>
+              Already a user?{" "}
+              <Link className="btn btn-outline-primary" to="/login">
+                Login
+              </Link>
+            </span>
+          </div>
+        </Fragment>
+      </div>
+      <div className="register__right">
+        <img
+          src="https://freefrontend.com/assets/img/css-animation-examples/css-animation-indoors-or-outdoors.gif"
+          alt=""
         />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          placeholder="password"
-          onChange={(e) => onChange(e)}
-          className="form-control my-3"
-        />
-        <input
-          type="text"
-          name="name"
-          value={name}
-          placeholder="name"
-          onChange={(e) => onChange(e)}
-          className="form-control my-3"
-        />
-        <button className="btn btn-success btn-block">Submit</button>
-      </form>
-      <Link to="/login">login</Link>
-    </Fragment>
+      </div>
+    </div>
   );
 };
 
