@@ -11,7 +11,6 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Main from "./components/Main";
-import EditEmploy from "./components/Employee/EditEmploy";
 import AddEmploy from "./components/Employee/AddEmploy";
 
 function App() {
